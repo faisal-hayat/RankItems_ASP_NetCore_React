@@ -9,6 +9,7 @@ export default class App extends Component {
 
   render() {
     return (
+        // we can render no more then 1 component
       <Layout>
         <Routes>
           {AppRoutes.map((route, index) => {

@@ -17,7 +17,7 @@ namespace DemoReact.Controllers
         {
             _logger = logger;
         }
-
+        // This is the get method
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
