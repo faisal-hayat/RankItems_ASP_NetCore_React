@@ -17,6 +17,6 @@ module.exports = function(app) {
       Connection: 'Keep-Alive'
     }
   });
+    app.use(appProxy);
 
-  app.use(appProxy);
 };

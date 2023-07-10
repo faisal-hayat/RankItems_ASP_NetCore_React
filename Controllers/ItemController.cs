@@ -8,7 +8,7 @@ namespace DemoReact.Controllers
     [Route("[controller]")]
     public class ItemController : ControllerBase
     {
-        private static readonly IEnumerable<ItemModel> itemModels = new[]
+        private static readonly IEnumerable<ItemModel> Items = new[]
         {
             new ItemModel{Id =1, Title = "The Godfather", ImageId=1, Ranking=0,ItemType=1 },
             new ItemModel{Id =2, Title = "Highlander", ImageId=2, Ranking=0,ItemType=1 },
@@ -37,7 +37,8 @@ namespace DemoReact.Controllers
         public ItemModel[] Get(int itemType)
         {
             // iterate over all items list 
-            ItemModel[] items = (ItemModel[])itemModels.Where(i=> i.ItemType== itemType);
+            // ItemModel[] items = (ItemModel[])itemModels.Where(i=> i.ItemType== itemType);
+            ItemModel[] items = Items.Where(i => i.ItemType == itemType).ToArray();
             return items;
         }
     }
