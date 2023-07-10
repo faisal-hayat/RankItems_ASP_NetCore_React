@@ -1,4 +1,7 @@
-﻿import React, { useState, useEffect } from "react";
+﻿// imports
+import React, { useState, useEffect } from "react";
+import MovieImageArr from "./MovieImages";
+
 
 function RankItems() {
     const [items, setItems] = useState([]);
@@ -13,11 +16,18 @@ function RankItems() {
             })
     }, []);
     return (
-        <main>
-            {
-                (items != null) ? items.map((item) => <h3>{item.title}</h3>) : <div>Loading...</div>
-            }
-        </main>
+        <div className="items-not-ranked">
+            <main>
+                {
+                    ((items != null) ? items.map((item) =>
+                        <div className="unranked-cell">
+                            <img id={`item-${item.id}`} src={MovieImageArr.find(o => o.id === item.ImageId)?.image} />)
+                        </div>
+                    
+                        : <div>Loading...</div>
+                    )}
+            </main>
+        </div>
   )
 }
 

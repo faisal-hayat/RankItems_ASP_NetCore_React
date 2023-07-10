@@ -6,7 +6,6 @@ import './custom.css';
 
 export default class App extends Component {
   static displayName = App.name;
-
   render() {
     return (
         // we can render no more then 1 component
