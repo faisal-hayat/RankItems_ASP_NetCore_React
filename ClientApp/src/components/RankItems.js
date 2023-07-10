@@ -14,8 +14,10 @@ function RankItems() {
     }, []);
     return (
         <main>
-        (items != null) ? items.map((item) => <h3>{item.title}</h3>):<div>Loading...</div>
-    </main>
+            {
+                (items != null) ? items.map((item) => <h3>{item.title}</h3>) : <div>Loading...</div>
+            }
+        </main>
   )
 }
 
